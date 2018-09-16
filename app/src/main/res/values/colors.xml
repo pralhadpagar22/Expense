@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#369DA4</color>
+    <color name="colorPrimaryDark">#369DA4</color>
+    <color name="colorAccent">#369DA4</color>
+    <color name="colorText">#369DA4</color>
+    <color name="colorTextHint">#002426</color>
+    <color name="roundShepColor">#071712</color>
+    <color name="navigationMenuTextColor">#FFBBFBFF</color>
+</resources>

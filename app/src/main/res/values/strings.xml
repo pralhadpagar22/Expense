@@ -1,0 +1,66 @@
+<resources>
+    <string name="app_name">दैनिक खर्च</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">सेटिंग्ज</string>
+    <string name="action_add">जोडा</string>
+
+    <!--Text user registration and flat_icon_login-->
+    <string name="text_accounts">सर्व खाते</string>
+    <string name="hint_first_name">नाव</string>
+    <string name="hint_last_name">आडनाव</string>
+    <string name="hint_contact">संपर्क</string>
+    <string name="hint_password">पासवर्ड</string>
+    <string name="text_login">लॉगइन</string>
+    <string name="text_register">नोंदणी करा</string>
+    <string name="hint_confirm_password">पासवर्ड पुष्टी करा</string>
+    <string name="text_not_member">खाते नाही? तयार करा.</string>
+
+    <!--Transaction In or Out dialog-->
+    <string name="text_transaction_in_or_out">पैसे घेणे किंवा देणे असल्यास.</string>
+    <string name="text_transaction_in">घेणे</string>
+    <string name="text_transaction_out">देणे</string>
+    <string name="text_available_balance">शिल्लक पैसे  -></string>
+    <string name="text_money_take_give_person">पैसे घेणारा किंवा देणारा व्यक्ती / कंपनी नाव</string>
+    <string name="text_how_many_amount">किती रक्कम</string>
+    <string name="text_on_return_policy">परत घेण्याच्या मुदतीवर.</string>
+    <string name="text_due_date">पैसे घेण्याची तारीक सेट करा.</string>
+    <string name="text_yes">हो</string>
+    <string name="text_no">नाही</string>
+    <!--Account Fragment-->
+    <string name="text_tr_type_out">दिले</string>
+    <string name="text_tr_type_in">घेतले</string>
+    <!--Error massage-->
+    <string name="error_message_first_name">नाव प्रविष्ट करा.</string>
+    <string name="error_message_last_name">आडनाव प्रविष्ट करा.</string>
+    <string name="error_message_contact">संपर्क मर्यादा दहा प्रविष्ट करा.</string>
+    <string name="error_message_password">पासवर्ड प्रविष्ट करा.</string>
+    <string name="error_message_confirm_password">पासवर्ड पुष्टी चुकीची आहे.</string>
+    <string name="error_contact_exists">संपर्क आधीच जतन केला आहे.</string>
+    <string name="error_password_match">पासवर्ड जुळत नाही.</string>
+    <string name="alert_message">प्रमाणीकरण इशारा</string>
+    <string name="error_valid_not_sufficient_amount">शिल्लक पैसे देण्या साठी पुरेसे नाही.</string>
+    <string name="error_valid_email_password">चुकीचा संपर्क किंवा संकेतशब्द.</string>
+    <string name="error_valid_due_date">मुदतीची तारीख योग्य टाखा.</string>
+
+    <!--Simple massage-->
+    <string name="message_registration_success">नोंदणी यशस्वी झाली आहे.</string>
+    <string name="message_loading_dialog">कृपया थांबा.</string>
+
+
+    <!--DashBoard Text-->
+    <string name="title_dashboard">डॅशबोर्ड</string>
+    <string name="title_expenses">खर्च</string>
+    <string name="title_account">खाते</string>
+    <string name="title_profile">प्रोफाइल</string>
+
+    <!--Common Button Text-->
+    <string name="save_btn">जतन करा</string>
+    <string name="cancel_btn">रद्द करा</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
