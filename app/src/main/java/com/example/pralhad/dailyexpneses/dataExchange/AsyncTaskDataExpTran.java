@@ -75,4 +75,8 @@ public class AsyncTaskDataExpTran extends AsyncTask<Object, Integer, List> {
     protected void onCancelled() {
         super.onCancelled();
     }
+
+    public void hello(){
+
+    }
 }

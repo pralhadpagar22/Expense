@@ -33,6 +33,8 @@
     <!--Account Fragment-->
     <string name="text_tr_type_out">दिले</string>
     <string name="text_tr_type_in">घेतले</string>
+    <string name="text_tr_type_due">बाकी</string>
+    <string name="text_tr_type_paid">जमा</string>
     <!--Error massage-->
     <string name="error_message_first_name">नाव प्रविष्ट करा.</string>
     <string name="error_message_last_name">आडनाव प्रविष्ट करा.</string>

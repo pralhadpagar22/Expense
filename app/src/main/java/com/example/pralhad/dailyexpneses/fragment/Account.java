@@ -124,22 +124,22 @@ public class Account extends Fragment implements Interface{
         if (result != null) {
             transactionAdapter = new TransactionAdapter(result, getContext());
             trList.setAdapter(transactionAdapter);
-//            trList.addOnScrollListener(new RecyclerView.OnScrollListener() {
-//                @Override
-//                public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
-//                    if (dy > 0 && MainActivity.navigation.isShown()) {
-//                        MainActivity.navigation.setVisibility(View.GONE);
-//                    } else if (dy < 0 ) {
-//                        MainActivity.navigation.setVisibility(View.VISIBLE);
-//                    }
-//                }
+            trList.addOnScrollListener(new RecyclerView.OnScrollListener() {
+                @Override
+                public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+                    if (dy > 0 && MainActivity.navigation.isShown()) {
+                        MainActivity.navigation.setVisibility(View.GONE);
+                    } else if (dy < 0 ) {
+                        MainActivity.navigation.setVisibility(View.VISIBLE);
+                    }
+                }
 
-//                @Override
-//                public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
-//
-//                    super.onScrollStateChanged(recyclerView, newState);
-//                }
-//            });
+                @Override
+                public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
+
+                    super.onScrollStateChanged(recyclerView, newState);
+                }
+            });
         }
     }
 

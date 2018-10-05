@@ -1,11 +1,170 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/text_padding"
+    android:paddingLeft="@dimen/text_padding"
+    android:paddingRight="@dimen/text_padding"
+    android:paddingTop="@dimen/text_padding">
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Do Something" />
+        android:orientation="vertical">
 
-</android.support.constraint.ConstraintLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:gravity="center_vertical"
+                android:padding="@dimen/text_padding"
+                android:text="@string/text_transaction_in_or_out"
+                android:textColor="@color/colorPrimary" />
+
+            <com.github.angads25.toggle.LabeledSwitch
+                android:id="@+id/all_result"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:textSize="14sp"
+                app:on="true"
+                app:textOff="@string/text_transaction_out"
+                app:textOn="@string/text_transaction_in" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/text_padding"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:gravity="center_vertical"
+                android:padding="@dimen/text_padding"
+                android:text="@string/text_transaction_in_or_out"
+                android:textColor="@color/colorPrimary" />
+
+            <com.github.angads25.toggle.LabeledSwitch
+                android:id="@+id/take_money"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:textSize="14sp"
+                app:on="true"
+                app:textOff="@string/text_transaction_out"
+                app:textOn="@string/text_transaction_in" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/text_padding"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:gravity="center_vertical"
+                android:padding="@dimen/text_padding"
+                android:text="@string/text_transaction_in_or_out"
+                android:textColor="@color/colorPrimary" />
+
+            <com.github.angads25.toggle.LabeledSwitch
+                android:id="@+id/give_money"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:textSize="14sp"
+                app:on="true"
+                app:textOff="@string/text_transaction_out"
+                app:textOn="@string/text_transaction_in" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/text_padding"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:gravity="center_vertical"
+                android:padding="@dimen/text_padding"
+                android:text="@string/text_transaction_in_or_out"
+                android:textColor="@color/colorPrimary" />
+
+            <com.github.angads25.toggle.LabeledSwitch
+                android:id="@+id/due_money"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:textSize="14sp"
+                app:on="true"
+                app:textOff="@string/text_transaction_out"
+                app:textOn="@string/text_transaction_in" />
+        </RelativeLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/from_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/text_due_date"
+            android:textAlignment="center"
+            android:textColor="@android:color/white" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/to_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/text_due_date"
+            android:textAlignment="center"
+            android:textColor="@android:color/white" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/fab_margin"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/cancel_btn"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/button_height"
+                android:layout_marginEnd="@dimen/nav_header_vertical_spacing"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="@string/cancel_btn"
+                android:textAlignment="center"
+                android:textColor="@android:color/white" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/save_transactions"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/button_height"
+                android:layout_marginStart="@dimen/nav_header_vertical_spacing"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="@string/save_btn"
+                android:textAlignment="center"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

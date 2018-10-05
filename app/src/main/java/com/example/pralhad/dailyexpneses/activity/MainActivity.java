@@ -13,7 +13,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.example.pralhad.dailyexpneses.R;
-import com.example.pralhad.dailyexpneses.extra.BottomNavigationViewBehavior;
 import com.example.pralhad.dailyexpneses.fragment.Account;
 import com.example.pralhad.dailyexpneses.fragment.Dashboard;
 import com.example.pralhad.dailyexpneses.fragment.Expenses;
@@ -24,7 +23,6 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -97,8 +95,6 @@ public class MainActivity extends AppCompatActivity {
 
         navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-        CoordinatorLayout.LayoutParams layoutParams = (CoordinatorLayout.LayoutParams) navigation.getLayoutParams();
-        layoutParams.setBehavior(new BottomNavigationViewBehavior());
 
         if (savedInstanceState == null)
             loadFragment(new Dashboard());

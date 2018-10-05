@@ -49,11 +49,16 @@ public class TransactionAdapter extends RecyclerView.Adapter<TransactionAdapter.
         Transaction transaction = (Transaction) transactionsList.get(position);
         holder.prName.setText(transaction.getTrPerson());
         holder.trAmount.setText(String.valueOf(transaction.getTrAmount()));
-        holder.trDate.setText(new SimpleDateFormat("MMM dd yyyy").format(transaction.getTrDate()));
+        holder.trDate.setText(new SimpleDateFormat("dd MMM yy").format(transaction.getTrDate()));
         if (transaction.getTrType() == 1)
             holder.trType.setText(context.getResources().getText(R.string.text_tr_type_in));
-        else holder.trType.setText(context.getResources().getText(R.string.text_tr_type_out));
-
+         else if (transaction.getTrType() == 2)
+            holder.trType.setText(context.getResources().getText(R.string.text_tr_type_out));
+        else if (transaction.getTrType() == 3)
+            holder.trType.setText(context.getResources().getText(R.string.text_tr_type_due));
+        else if (transaction.getTrType() == 0)
+            holder.trType.setText(context.getResources().getText(R.string.text_tr_type_paid));
+//            holder.trType.setTextColor(context.getResources().getColor(R.color.color_due_text));
     }
 
     @Override

@@ -7,4 +7,9 @@
     <color name="colorTextHint">#002426</color>
     <color name="roundShepColor">#071712</color>
     <color name="navigationMenuTextColor">#FFBBFBFF</color>
+
+    <!-- transaction type text color -->
+    <!--<color name="color_due_text">#3cff00</color>-->
+    <!--<color name="color_take_text">#000000</color> &lt;!&ndash;Ghetle&ndash;&gt;-->
+    <!--<color name="color_give_text">#ffffff</color> &lt;!&ndash;Dile&ndash;&gt;-->
 </resources>

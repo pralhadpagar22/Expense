@@ -200,7 +200,7 @@ public class TransactionsDialog extends DialogFragment implements View.OnClickLi
                 setTransactionData();
                 if (checkValidation()) {
                     if (addTransaction()) {
-                        Toast.makeText(getContext(), "Transaction add Successfully", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getContext(), "Add Successfully", Toast.LENGTH_LONG).show();
                         new TransactionsDataSource(MainActivity.dataSource).showData();
                         if (account != null)
                             account.updateUI();
