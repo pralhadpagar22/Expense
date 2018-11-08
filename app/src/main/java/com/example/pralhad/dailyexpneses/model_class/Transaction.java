@@ -1,4 +1,4 @@
-package com.example.pralhad.dailyexpneses.pojoClass;
+package com.example.pralhad.dailyexpneses.model_class;
 
 import java.sql.Timestamp;
 
@@ -8,6 +8,7 @@ public class Transaction {
     private int trType;
     private String trPerson;
     private java.sql.Timestamp trDate;
+    private java.sql.Timestamp trDueDate;
     private int trAmount;
 
     public int getTrId() {
@@ -48,5 +49,13 @@ public class Transaction {
 
     public void setTrAmount(int trAmount) {
         this.trAmount = trAmount;
+    }
+
+    public Timestamp getTrDueDate() {
+        return trDueDate;
+    }
+
+    public void setTrDueDate(Timestamp trDueDate) {
+        this.trDueDate = trDueDate;
     }
 }

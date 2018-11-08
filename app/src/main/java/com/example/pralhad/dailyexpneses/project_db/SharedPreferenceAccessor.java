@@ -17,7 +17,7 @@ public class SharedPreferenceAccessor {
     private SharedPreferences sharedPref;
     private SharedPreferences.Editor editor;
 
-    SharedPreferenceAccessor(Context context) {
+    public SharedPreferenceAccessor(Context context) {
         this.context = context;
         this.sharedPref = ((Activity)context).getPreferences(Context.MODE_PRIVATE);
         this.editor = sharedPref.edit();

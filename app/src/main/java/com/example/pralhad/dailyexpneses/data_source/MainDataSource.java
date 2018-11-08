@@ -1,4 +1,4 @@
-package com.example.pralhad.dailyexpneses.project_db;
+package com.example.pralhad.dailyexpneses.data_source;
 
 import android.annotation.TargetApi;
 import android.content.ContentValues;
@@ -8,6 +8,9 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteStatement;
 import android.os.Build;
+
+import com.example.pralhad.dailyexpneses.project_db.SharedPreferenceAccessor;
+import com.example.pralhad.dailyexpneses.project_db.UserExpenseDB;
 
 import java.text.SimpleDateFormat;
 
@@ -114,10 +117,10 @@ public class MainDataSource {
         return database.delete(table, whereClause, whereArgs);
     }
 
-//    public int update(String table, ContentValues values, String whereClause, String[] whereArgs) {
+    public int update(String table, ContentValues values, String whereClause, String[] whereArgs) {
 //        bookKeeping(values.getAsString(PISQLiteHelper.UPDATED_ON));
-//        return database.update(table, values, whereClause, whereArgs);
-//    }
+        return database.update(table, values, whereClause, whereArgs);
+    }
 
     public Cursor rawQuery(String sql, String[] selectionArgs) {
         return database.rawQuery(sql, selectionArgs);
@@ -273,13 +276,13 @@ public class MainDataSource {
 //    }
 //
 //    /**
-//     * Consider a situation where the user creates an invoice. It gets InId : 11 in the off_invoices
+//     * Consider a situation where the User creates an invoice. It gets InId : 11 in the off_invoices
 //     * table. Now before the SyncCall response( delayed for any reasons e.g. slow network, sudden loss of wifi
 //     * signal or goes offline) for invoice returns with online invoice ID suppose 34567 for that invoice,
 //     * 1. User adds an item/payment/receipt (anything that has inId as a foreign key). it gets InId : 11
 //     * as the response hasn't reached us or added in the tables.
 //     * 2. How if we try to sync, this will cause an error as the on the server, it will produce foreign key
-//     * constraint failure/as inId : 11 is might not be of that user, moreover it is a wrong invoice.
+//     * constraint failure/as inId : 11 is might not be of that User, moreover it is a wrong invoice.
 //     * 3. So we fix this issues by by calling at replaceIdsForIntegrity. It is called at two points:
 //     * a. After sync response is received, we call replaceIdsForIntegrity and update that item InId
 //     * from 11 -> 34567. Similarly for payments and receipts
@@ -318,7 +321,7 @@ public class MainDataSource {
 //     * This function will not be used in future
 //     * This is temporary function for data migration from old invoice PDF App to New invoice PDF App
 //     * This function is called from ContentSupport -> (Button) missingData
-//     * This function is used if the user fills data has not fully synced or some data is missing then this function is used
+//     * This function is used if the User fills data has not fully synced or some data is missing then this function is used
 //     * to delete all new created tables
 //     */
 //    public void deleteAllTableRows() {

@@ -10,10 +10,10 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.pralhad.dailyexpneses.R;
-import com.example.pralhad.dailyexpneses.dataExchange.UsersDataSource;
-import com.example.pralhad.dailyexpneses.extra.Constant;
-import com.example.pralhad.dailyexpneses.extra.SharedVariable;
-import com.example.pralhad.dailyexpneses.extra.Validation;
+import com.example.pralhad.dailyexpneses.data_source.UsersDataSource;
+import com.example.pralhad.dailyexpneses.general.Constant;
+import com.example.pralhad.dailyexpneses.general.SharedVariable;
+import com.example.pralhad.dailyexpneses.general.Validation;
 import com.example.pralhad.dailyexpneses.fragment.SimpleDialog;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
@@ -40,11 +40,11 @@ public class UserSignUp extends AppCompatActivity implements View.OnClickListene
         inputPassword = (TextInputLayout) findViewById(R.id.input_password);
 
 
-        //user create userRegisterBtn
+        //User create userRegisterBtn
         Button userRegisterBtn = (Button) findViewById(R.id.user_register_btn);
         userRegisterBtn.setOnClickListener(this);
 
-        //user flat_icon_login button
+        //User flat_icon_login button
         Button loginBtn = (Button) findViewById(R.id.login_btn);
         loginBtn.setOnClickListener(this);
 

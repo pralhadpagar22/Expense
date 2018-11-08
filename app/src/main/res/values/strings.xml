@@ -8,7 +8,7 @@
     <string name="action_settings">सेटिंग्ज</string>
     <string name="action_add">जोडा</string>
 
-    <!--Text user registration and flat_icon_login-->
+    <!--Text User registration and flat_icon_login-->
     <string name="text_accounts">सर्व खाते</string>
     <string name="hint_first_name">नाव</string>
     <string name="hint_last_name">आडनाव</string>
@@ -20,7 +20,7 @@
     <string name="text_not_member">खाते नाही? तयार करा.</string>
 
     <!--Transaction In or Out dialog-->
-    <string name="text_transaction_in_or_out">पैसे घेणे किंवा देणे असल्यास.</string>
+    <string name="text_transaction_in_or_out">पैसे घेणे किंवा देणे असल्यास / कमाई</string>
     <string name="text_transaction_in">घेणे</string>
     <string name="text_transaction_out">देणे</string>
     <string name="text_available_balance">शिल्लक पैसे  -></string>
@@ -30,11 +30,15 @@
     <string name="text_due_date">पैसे घेण्याची तारीक सेट करा.</string>
     <string name="text_yes">हो</string>
     <string name="text_no">नाही</string>
+
     <!--Account Fragment-->
-    <string name="text_tr_type_out">दिले</string>
-    <string name="text_tr_type_in">घेतले</string>
-    <string name="text_tr_type_due">बाकी</string>
+    <string name="text_tr_type_given">दिले</string>
+    <string name="text_tr_type_income">कमाई</string>
+    <string name="text_tr_type_given_due">बाकी</string>
     <string name="text_tr_type_paid">जमा</string>
+    <string name="text_tr_due_date">पैसे घेण्याची अंतिम तारीख:</string>
+    <string name="text_tr_amount_type">₹</string>
+
     <!--Error massage-->
     <string name="error_message_first_name">नाव प्रविष्ट करा.</string>
     <string name="error_message_last_name">आडनाव प्रविष्ट करा.</string>
@@ -43,14 +47,18 @@
     <string name="error_message_confirm_password">पासवर्ड पुष्टी चुकीची आहे.</string>
     <string name="error_contact_exists">संपर्क आधीच जतन केला आहे.</string>
     <string name="error_password_match">पासवर्ड जुळत नाही.</string>
-    <string name="alert_message">प्रमाणीकरण इशारा</string>
-    <string name="error_valid_not_sufficient_amount">शिल्लक पैसे देण्या साठी पुरेसे नाही.</string>
     <string name="error_valid_email_password">चुकीचा संपर्क किंवा संकेतशब्द.</string>
-    <string name="error_valid_due_date">मुदतीची तारीख योग्य टाखा.</string>
 
     <!--Simple massage-->
-    <string name="message_registration_success">नोंदणी यशस्वी झाली आहे.</string>
-    <string name="message_loading_dialog">कृपया थांबा.</string>
+    <string name="alert_message">अलर्ट</string>
+    <string name="msg_undo">पूर्ववत करा</string>
+    <string name="msg_loading_dialog">कृपया थांबा.</string>
+    <string name="msg_registration_success">नोंदणी यशस्वी झाली आहे.</string>
+    <string name="msg_valid_not_sufficient_amount">शिल्लक पैसे देण्या साठी पुरेसे नाही.</string>
+    <string name="msg_valid_due_date">मुदतीची तारीख योग्य टाखा.</string>
+    <string name="msg_valid_edit_remaining_bal">शिल्लक राक्कम - जुनी राक्कम = उत्तर \n उत्तर + नविन राक्कम = येनार उत्तर वजा नको.</string>
+    <string name="msg_valid_restrict_amount_delete">रक्कम वापरल्या गेली आहे. हटऊ शकत नाही.</string>
+
 
 
     <!--DashBoard Text-->
@@ -59,9 +67,11 @@
     <string name="title_account">खाते</string>
     <string name="title_profile">प्रोफाइल</string>
 
-    <!--Common Button Text-->
+    <!--Common Button, TextView Text-->
     <string name="save_btn">जतन करा</string>
     <string name="cancel_btn">रद्द करा</string>
+    <string name="delete_btn">हटवा</string>
+    <string name="edit_btn">संपादित करा</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

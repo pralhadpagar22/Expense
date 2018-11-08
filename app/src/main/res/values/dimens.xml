@@ -9,4 +9,10 @@
     <dimen name="top_margin">100dp</dimen>
     <dimen name="button_height">50dp</dimen>
     <dimen name="row_padding_vertical">10dp</dimen>
+    <dimen name="card_view_corner">2dp</dimen>
+    <dimen name="nav_header_vertical_spacing_half">3dp</dimen>
+    <dimen name="labeled_default_width">72dp</dimen>
+    <dimen name="labeled_default_height">32dp</dimen>
+    <dimen name="day_night_default_width">84dp</dimen>
+    <dimen name="day_night_default_height">48dp</dimen>
 </resources>

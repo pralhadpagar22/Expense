@@ -1,4 +1,4 @@
-package com.example.pralhad.dailyexpneses.dataExchange;
+package com.example.pralhad.dailyexpneses.data_source;
 
 import android.content.ContentValues;
 import android.database.Cursor;
@@ -6,10 +6,8 @@ import android.database.DatabaseUtils;
 import android.util.Log;
 
 import com.example.pralhad.dailyexpneses.activity.MainActivity;
-import com.example.pralhad.dailyexpneses.project_db.MainDataSource;
 import com.example.pralhad.dailyexpneses.project_db.UserExpenseDB;
 
-import java.util.List;
 import java.util.Map;
 
 public class ExpensesDataSource {

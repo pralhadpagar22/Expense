@@ -10,7 +10,7 @@ public class UserExpenseDB extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION_1_0_0  = 1;
     private static final String DATABASE_NAME        = "DailyReport.db";
 
-    //user table
+    //User table
     public static final String USER_TABLE                   = "users";
     public static final String USER_ID                      = "userId";
     public static final String USER_FNAME                   = "userFName";
@@ -19,7 +19,7 @@ public class UserExpenseDB extends SQLiteOpenHelper {
     public static final String USER_PASSWORD                = "userPassword";
     public static final String IS_ACTIVE                    = "isActive";
 
-    //user transaction table
+    //User transaction table
     public static final String TRANSACTION_TABLE            = "transactions";
     public static final String TR_ID                        = "trId";
     public static final String TR_TYPE                      = "trType";
@@ -28,7 +28,7 @@ public class UserExpenseDB extends SQLiteOpenHelper {
     public static final String TR_AMOUNT                    = "trAmount";
     public static final String TR_DUE_DATE                  = "trDueDate";
 
-    //user expenses table
+    //User expenses table
     public static final String EXPENSES_TABLE               = "expenses";
     public static final String EX_ID                        = "exId";
     public static final String EX_DATE                      = "exDate";
@@ -37,7 +37,7 @@ public class UserExpenseDB extends SQLiteOpenHelper {
     public static final String EX_BALANCE                   = "exBalance";
     public static final String EX_BILL                      = "exBill";
 
-    //user master table
+    //User master table
     private static final String CREATE_TABLE_USER = "CREATE TABLE '"
             + USER_TABLE + "'('"                            + USER_ID
             + "' integer primary key AUTOINCREMENT, '"      + USER_FNAME
@@ -54,9 +54,9 @@ public class UserExpenseDB extends SQLiteOpenHelper {
             + "' integer primary key AUTOINCREMENT, '"      + TR_TYPE
             + "' tinyint DEFAULT 1, '"                      + TR_PERSON
             + "' varchar(50), '"                            + TR_DATE
-            + "' datetime DEFAULT current_timestamp, '"     + TR_AMOUNT
+            + "' timestamp DEFAULT current_timestamp, '"    + TR_AMOUNT
             + "' integer, '"                                + TR_DUE_DATE
-            + "' datetime DEFAULT NULL, '"                  + USER_ID
+            + "' timestamp DEFAULT NULL, '"                 + USER_ID
             + "' integer NOT NULL,   '"                     + IS_ACTIVE
             + "' tinyint DEFAULT 1 );";
 
@@ -64,7 +64,7 @@ public class UserExpenseDB extends SQLiteOpenHelper {
     private static final String CREATE_EXPENSES_TABLE = "CREATE TABLE '"
             + EXPENSES_TABLE + "'('"                        + EX_ID
             + "' integer primary key AUTOINCREMENT, '"      + EX_DATE
-            + "' datetime DEFAULT current_timestamp, '"     + EX_PARTICULAR
+            + "' timestamp DEFAULT current_timestamp, '"    + EX_PARTICULAR
             + "' text NOT NULL, '"                          + EX_AMOUNT
             + "' integer NOT NULL,'"                        + EX_BALANCE
             + "' integer NOT NULL, '"                       + EX_BILL

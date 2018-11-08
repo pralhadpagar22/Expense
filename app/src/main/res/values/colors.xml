@@ -9,7 +9,11 @@
     <color name="navigationMenuTextColor">#FFBBFBFF</color>
 
     <!-- transaction type text color -->
-    <!--<color name="color_due_text">#3cff00</color>-->
-    <!--<color name="color_take_text">#000000</color> &lt;!&ndash;Ghetle&ndash;&gt;-->
-    <!--<color name="color_give_text">#ffffff</color> &lt;!&ndash;Dile&ndash;&gt;-->
+    <color name="color_due_text">#F21D19</color>
+    <color name="color_income_text">#4EC215</color> <!--Ghetle, income-->
+    <color name="color_outgoing_text">#03BEEB</color> <!--Dile-->
+
+    <!--Alert Color-->
+    <color name="color_alert">#d96a64</color>
+    <color name="color_yellow">#FFFF00</color>
 </resources>

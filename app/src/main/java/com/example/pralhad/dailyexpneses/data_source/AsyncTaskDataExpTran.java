@@ -1,10 +1,10 @@
-package com.example.pralhad.dailyexpneses.dataExchange;
+package com.example.pralhad.dailyexpneses.data_source;
 
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.AsyncTask;
 
-import com.example.pralhad.dailyexpneses.InterfaceClass.Interface;
+import com.example.pralhad.dailyexpneses.Interface_class.Interface;
 import com.example.pralhad.dailyexpneses.R;
 import com.example.pralhad.dailyexpneses.activity.MainActivity;
 
@@ -24,7 +24,7 @@ public class AsyncTaskDataExpTran extends AsyncTask<Object, Integer, List> {
         this.type = type;
         this.anInterface = anInterface;
         progressDialog = new ProgressDialog(context);
-        progressDialog.setMessage(context.getResources().getString(R.string.message_loading_dialog));
+        progressDialog.setMessage(context.getResources().getString(R.string.msg_loading_dialog));
         this.context = context;
     }
 
@@ -47,8 +47,6 @@ public class AsyncTaskDataExpTran extends AsyncTask<Object, Integer, List> {
     protected void onPreExecute() {
         super.onPreExecute();
         progressDialog.show();
-
-
     }
 
     @Override
@@ -74,9 +72,5 @@ public class AsyncTaskDataExpTran extends AsyncTask<Object, Integer, List> {
     @Override
     protected void onCancelled() {
         super.onCancelled();
-    }
-
-    public void hello(){
-
     }
 }

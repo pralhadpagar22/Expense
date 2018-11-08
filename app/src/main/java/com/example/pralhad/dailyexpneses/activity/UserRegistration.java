@@ -1,33 +1,28 @@
 package com.example.pralhad.dailyexpneses.activity;
 
 import android.content.Intent;
-//import android.support.design.widget.TextInputEditText;
-//import android.support.design.widget.TextInputLayout;
-//import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
 import com.example.pralhad.dailyexpneses.R;
-import com.example.pralhad.dailyexpneses.dataExchange.UsersDataSource;
-import com.example.pralhad.dailyexpneses.extra.SharedVariable;
-import com.example.pralhad.dailyexpneses.extra.Validation;
+import com.example.pralhad.dailyexpneses.data_source.UsersDataSource;
+import com.example.pralhad.dailyexpneses.general.SharedVariable;
+import com.example.pralhad.dailyexpneses.general.Validation;
+import com.example.pralhad.dailyexpneses.model_class.User;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-
 import androidx.appcompat.app.AppCompatActivity;
+
+//import android.support.design.widget.TextInputEditText;
+//import android.support.design.widget.TextInputLayout;
+//import android.support.v7.app.AppCompatActivity;
 
 public class UserRegistration extends AppCompatActivity implements View.OnClickListener {
 
     private TextInputEditText userFirstName, userLastName, userContact, userPassword, userConfirmUserPassword;
     private TextInputLayout inputContact, inputPassword, inputConfirmPassword, inputFirstName, inputLastName;
-    private String usrContact, usrPassword, usrFirstName, usrLastName, usrConfirmPassword;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,17 +48,9 @@ public class UserRegistration extends AppCompatActivity implements View.OnClickL
     }
 
     public boolean checkValidation() {
-        // variable initialize
-        usrFirstName = userFirstName.getText() + "";
-        usrLastName = userLastName.getText() + "";
-        usrContact = userContact.getText() + "";
-        usrPassword = userPassword.getText() + "";
-        usrConfirmPassword = userConfirmUserPassword.getText() + "";
-
-
         // check validation.
 
-        if (Validation.nameValidation(usrFirstName)) {
+        if (Validation.nameValidation(userFirstName.getText().toString().trim())) {
             inputFirstName.setErrorEnabled(false);
         } else {
             inputFirstName.setError(getResources().getString(R.string.error_message_first_name));
@@ -71,7 +58,7 @@ public class UserRegistration extends AppCompatActivity implements View.OnClickL
             return false;
         }
 
-        if (Validation.nameValidation(usrLastName)) {
+        if (Validation.nameValidation(userLastName.getText().toString().trim())) {
             inputLastName.setErrorEnabled(false);
         } else {
             inputLastName.setError(getResources().getString(R.string.error_message_last_name));
@@ -79,14 +66,14 @@ public class UserRegistration extends AppCompatActivity implements View.OnClickL
             return false;
         }
 
-        if (Validation.contactValidation(usrContact, inputContact, this))
+        if (Validation.contactValidation(userContact.getText().toString().trim(), inputContact, this))
             inputContact.setErrorEnabled(false);
         else {
             SharedVariable.hideKeyboardFrom(userContact, this);
             return false;
         }
 
-        if (Validation.passwordValidation(usrPassword)) {
+        if (Validation.passwordValidation(userPassword.getText().toString())) {
             inputPassword.setErrorEnabled(false);
         } else {
             inputPassword.setError(getResources().getString(R.string.error_message_password));
@@ -94,7 +81,7 @@ public class UserRegistration extends AppCompatActivity implements View.OnClickL
             return false;
         }
 
-        if (usrConfirmPassword.equals(usrPassword)) {
+        if (userConfirmUserPassword.getText().toString().equals(userPassword.getText().toString())) {
             inputConfirmPassword.setErrorEnabled(false);
 
         } else {
@@ -116,22 +103,21 @@ public class UserRegistration extends AppCompatActivity implements View.OnClickL
                 break;
         }
     }
-    private Map<String, String> addUser(){
-        Map<String, String> user = new HashMap<>();
-        user.put("usrFirstName", usrFirstName);
-        user.put("usrLastName", usrLastName);
-        user.put("usrContact", usrContact);
-        user.put("usrPassword", usrPassword);
+    private User addUser(){
+        User user = new User();
+        user.setUserFName(userFirstName.getText().toString().trim());
+        user.setUserLName(userLastName.getText().toString().trim());
+        user.setUserContact(userContact.getText().toString().trim());
+        user.setUserPassword(userPassword.getText() + "");
         long returnValue = new UsersDataSource(MainActivity.dataSource).createUser(user);
-        Log.i("***query result", returnValue + "");
         return user;
     }
 
-    private void redirectLogin( Map<String, String> user){
+    private void redirectLogin(User user){
         Intent intent = new Intent(getBaseContext(), UserSignUp.class);
-        intent.putExtra("usrContact", user.get("usrContact"));
-        intent.putExtra("usrPassword", user.get("usrPassword"));
-        intent.putExtra("userName", user.get("usrFirstName") + " " + user.get("usrLastName"));
+        intent.putExtra("usrContact", user.getUserContact());
+        intent.putExtra("usrPassword", user.getUserPassword());
+        intent.putExtra("userName", user.getUserFName() + " " + user.getUserLName());
         startActivity(intent);
         finish();
     }

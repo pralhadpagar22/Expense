@@ -17,7 +17,7 @@ import com.example.pralhad.dailyexpneses.fragment.Account;
 import com.example.pralhad.dailyexpneses.fragment.Dashboard;
 import com.example.pralhad.dailyexpneses.fragment.Expenses;
 import com.example.pralhad.dailyexpneses.fragment.Profile;
-import com.example.pralhad.dailyexpneses.project_db.MainDataSource;
+import com.example.pralhad.dailyexpneses.data_source.MainDataSource;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.annotation.NonNull;
