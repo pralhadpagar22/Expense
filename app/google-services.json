@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "645274349944",
+    "firebase_url": "https://dailyexpneses.firebaseio.com",
+    "project_id": "dailyexpneses",
+    "storage_bucket": "dailyexpneses.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:645274349944:android:c0f3c552395861d670d88d",
+        "android_client_info": {
+          "package_name": "com.example.pralhad.dailyexpneses"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "645274349944-3ea746k36t07pupn1n1gadjgcf1hq80l.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.pralhad.dailyexpneses",
+            "certificate_hash": "e21f852c50724608aa9fea0b5f0ca484a801df4c"
+          }
+        },
+        {
+          "client_id": "645274349944-jfb1s31ami5k4sk2f97c2s75hhkscu1c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAdj3bK5Odzj6K0L_nRlGPB8iVixBgNxVc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "645274349944-jfb1s31ami5k4sk2f97c2s75hhkscu1c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
