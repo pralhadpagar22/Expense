@@ -9,16 +9,19 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteStatement;
 import android.os.Build;
 
+import com.example.pralhad.dailyexpneses.general.Constants;
+import com.example.pralhad.dailyexpneses.model_class.User;
+import com.example.pralhad.dailyexpneses.project_db.DBExpenses;
 import com.example.pralhad.dailyexpneses.project_db.SharedPreferenceAccessor;
-import com.example.pralhad.dailyexpneses.project_db.UserExpenseDB;
 
 import java.text.SimpleDateFormat;
+import java.util.TimeZone;
 
 public class MainDataSource {
 
     // Database fields
     public SQLiteDatabase database;
-    private UserExpenseDB dbHelper;
+    private DBExpenses dbHelper;
 
     private static SimpleDateFormat dateFormat;
     public SharedPreferenceAccessor sPref;
@@ -44,11 +47,11 @@ public class MainDataSource {
 //    }
 
     public MainDataSource(Context context) {
-        dbHelper = new UserExpenseDB(context);
+        dbHelper = new DBExpenses(context);
         this.context = context;
 
-//        dateFormat = new SimpleDateFormat(Constants.TIMESTAMP_FORMAT);
-//        dateFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
+        dateFormat = new SimpleDateFormat(Constants.TIMESTAMP_FORMAT);
+        dateFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
 
         sPref = new SharedPreferenceAccessor(context);
 //        serviceRunner = new ServiceRunner(context);
@@ -128,6 +131,14 @@ public class MainDataSource {
 
     public Cursor query(String table, String[] columns, String selection, String[] selectionArgs, String groupBy, String having, String orderBy, String limit) {
         return database.query(table, columns, selection, selectionArgs, groupBy, having, orderBy, limit);
+    }
+
+    public void setApplicationData(User user) {
+        sPref.setUserId(user.getUserId().intValue());
+        sPref.setUserContact(user.getUserContact());
+        sPref.setUserPassword(user.getUserPassword());
+        sPref.setUserName(user.getUserName());
+        sPref.setUserEmail(user.getUserEmail());
     }
 
 //    /*

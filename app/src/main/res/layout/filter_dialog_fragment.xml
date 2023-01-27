@@ -3,166 +3,161 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/text_padding"
-    android:paddingLeft="@dimen/text_padding"
-    android:paddingRight="@dimen/text_padding"
-    android:paddingTop="@dimen/text_padding">
+    android:padding="@dimen/text_padding">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <RelativeLayout
+        <com.google.android.material.card.MaterialCardView
+            style="@style/Widget.MaterialComponents.CardView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
+            android:layout_marginLeft="@dimen/card_view_corner"
+            android:layout_marginTop="@dimen/card_view_corner"
+            android:layout_marginRight="@dimen/card_view_corner"
+            android:layout_marginBottom="@dimen/card_view_corner">
+
+            <LinearLayout
+                android:id="@+id/sortInStatLinearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorPrimary">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/text_padding"
+                        android:text="@string/text_filter_on_transactions"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/white"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+
+                <RadioGroup
+                    android:id="@+id/transactionRG"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <RadioButton
+                        android:id="@+id/rbTransactionAll"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/nav_header_vertical_spacing_half"
+                        android:text="@string/text_filter_show_all" />
+
+                    <RadioButton
+                        android:id="@+id/rbIncome"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/color_income"
+                        android:padding="@dimen/nav_header_vertical_spacing_half"
+                        android:text="@string/text_tr_type_income" />
+
+                    <RadioButton
+                        android:id="@+id/rbGiveTransaction"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/color_outgoing"
+                        android:padding="@dimen/nav_header_vertical_spacing_half"
+                        android:text="@string/text_filter_give_money" />
+
+                    <RadioButton
+                        android:id="@+id/rbPaidTransaction"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/color_paid"
+                        android:padding="@dimen/nav_header_vertical_spacing_half"
+                        android:text="@string/text_tr_type_paid" />
+
+                    <RadioButton
+                        android:id="@+id/rbTransactionOnReturnPolicy"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/color_due"
+                        android:padding="@dimen/nav_header_vertical_spacing_half"
+                        android:text="@string/text_filter_take_money" />
+                </RadioGroup>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/card_view_corner"
+            android:layout_marginTop="@dimen/card_view_corner"
+            android:layout_marginRight="@dimen/card_view_corner"
+            android:layout_marginBottom="@dimen/card_view_corner"
             android:orientation="horizontal">
 
-            <TextView
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/from_date_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:gravity="center_vertical"
+                android:layout_marginEnd="@dimen/card_view_corner"
+                android:layout_weight="1"
+                android:gravity="center"
                 android:padding="@dimen/text_padding"
-                android:text="@string/text_transaction_in_or_out"
-                android:textColor="@color/colorPrimary" />
+                android:text="@string/btn_from"
+                android:textColor="@android:color/white"
+                app:icon="@drawable/baseline_date_range_black" />
 
-            <com.github.angads25.toggle.LabeledSwitch
-                android:id="@+id/all_result"
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/to_date_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:textSize="14sp"
-                app:on="true"
-                app:textOff="@string/text_transaction_out"
-                app:textOn="@string/text_transaction_in" />
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/text_padding"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:gravity="center_vertical"
+                android:layout_marginStart="@dimen/card_view_corner"
+                android:layout_weight="1"
+                android:gravity="center"
                 android:padding="@dimen/text_padding"
-                android:text="@string/text_transaction_in_or_out"
-                android:textColor="@color/colorPrimary" />
-
-            <com.github.angads25.toggle.LabeledSwitch
-                android:id="@+id/take_money"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:textSize="14sp"
-                app:on="true"
-                app:textOff="@string/text_transaction_out"
-                app:textOn="@string/text_transaction_in" />
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/text_padding"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:gravity="center_vertical"
-                android:padding="@dimen/text_padding"
-                android:text="@string/text_transaction_in_or_out"
-                android:textColor="@color/colorPrimary" />
-
-            <com.github.angads25.toggle.LabeledSwitch
-                android:id="@+id/give_money"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:textSize="14sp"
-                app:on="true"
-                app:textOff="@string/text_transaction_out"
-                app:textOn="@string/text_transaction_in" />
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/text_padding"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:gravity="center_vertical"
-                android:padding="@dimen/text_padding"
-                android:text="@string/text_transaction_in_or_out"
-                android:textColor="@color/colorPrimary" />
-
-            <com.github.angads25.toggle.LabeledSwitch
-                android:id="@+id/due_money"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:textSize="14sp"
-                app:on="true"
-                app:textOff="@string/text_transaction_out"
-                app:textOn="@string/text_transaction_in" />
-        </RelativeLayout>
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/from_date"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/text_due_date"
-            android:textAlignment="center"
-            android:textColor="@android:color/white" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/to_date"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/text_due_date"
-            android:textAlignment="center"
-            android:textColor="@android:color/white" />
+                android:text="@string/btn_to"
+                android:textColor="@android:color/white"
+                app:icon="@drawable/baseline_date_range_black" />
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/fab_margin"
+            android:layout_marginLeft="@dimen/card_view_corner"
+            android:layout_marginTop="@dimen/card_view_corner"
+            android:layout_marginRight="@dimen/card_view_corner"
+            android:layout_marginBottom="@dimen/card_view_corner"
             android:orientation="horizontal">
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/cancel_btn"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/button_height"
-                android:layout_marginEnd="@dimen/nav_header_vertical_spacing"
+                android:layout_marginEnd="@dimen/card_view_corner"
                 android:layout_weight="1"
                 android:gravity="center_vertical"
-                android:text="@string/cancel_btn"
+                android:padding="@dimen/text_padding"
+                android:text="@string/btn_cancel"
                 android:textAlignment="center"
-                android:textColor="@android:color/white" />
+                android:textColor="@android:color/white"
+                app:icon="@drawable/outline_cancel_white" />
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/save_transactions"
+                android:id="@+id/apply_filter_btn"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/button_height"
-                android:layout_marginStart="@dimen/nav_header_vertical_spacing"
+                android:layout_marginStart="@dimen/card_view_corner"
                 android:layout_weight="1"
                 android:gravity="center_vertical"
-                android:text="@string/save_btn"
+                android:padding="@dimen/text_padding"
+                android:text="@string/btn_apply"
                 android:textAlignment="center"
-                android:textColor="@android:color/white" />
+                android:textColor="@android:color/white"
+                app:icon="@drawable/outline_check_circle_white" />
         </LinearLayout>
 
     </LinearLayout>

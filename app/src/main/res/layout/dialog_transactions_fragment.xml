@@ -53,7 +53,7 @@
                     android:text="@string/text_transaction_in_or_out"
                     android:textColor="@color/colorPrimary" />
 
-                <com.example.pralhad.dailyexpneses.general.LabeledSwitch
+                <com.example.pralhad.dailyexpneses.toggle_view.LabeledSwitch
                     android:id="@+id/switch_in_out_transaction"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -61,7 +61,7 @@
                     android:textSize="14sp"
                     app:on="true"
                     app:textOff="@string/text_transaction_out"
-                    app:textOn="@string/text_transaction_in" />
+                    app:textOn="@string/text_tr_type_income" />
             </RelativeLayout>
 
             <LinearLayout
@@ -87,7 +87,7 @@
                         android:text="@string/text_on_return_policy"
                         android:textColor="@color/colorPrimary" />
 
-                    <com.example.pralhad.dailyexpneses.general.LabeledSwitch
+                    <com.example.pralhad.dailyexpneses.toggle_view.LabeledSwitch
                         android:id="@+id/switch_return_money"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -119,13 +119,14 @@
                 </LinearLayout>
 
             </LinearLayout>
+
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/input_transaction_person_name"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/nav_header_vertical_spacing"
-                android:hint="@string/text_money_take_give_person">
+                android:hint="@string/text_money_give_person_name">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/transaction_person_name"
@@ -181,18 +182,18 @@
                     android:layout_marginEnd="@dimen/nav_header_vertical_spacing"
                     android:layout_weight="1"
                     android:gravity="center_vertical"
-                    android:text="@string/cancel_btn"
+                    android:text="@string/btn_cancel"
                     android:textAlignment="center"
                     android:textColor="@android:color/white" />
 
                 <com.google.android.material.button.MaterialButton
-                    android:id="@+id/save_transactions"
+                    android:id="@+id/apply_transactions"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/button_height"
                     android:layout_marginStart="@dimen/nav_header_vertical_spacing"
                     android:layout_weight="1"
                     android:gravity="center_vertical"
-                    android:text="@string/save_btn"
+                    android:text="@string/btn_save"
                     android:textAlignment="center"
                     android:textColor="@android:color/white" />
             </LinearLayout>

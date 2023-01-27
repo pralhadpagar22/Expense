@@ -29,7 +29,7 @@
             android:layout_centerVertical="true"
             android:layout_marginRight="10dp"
             android:layout_toLeftOf="@id/delete_icon"
-            android:text="@string/delete_btn"
+            android:text="@string/btn_delete"
             android:textColor="#fff"
             android:textSize="13dp" />
 
@@ -49,7 +49,7 @@
             android:layout_centerVertical="true"
             android:layout_marginLeft="10dp"
             android:layout_toRightOf="@id/edit_icon"
-            android:text="@string/edit_btn"
+            android:text="@string/btn_edit"
             android:textColor="#fff"
             android:textSize="13dp" />
     </RelativeLayout>
@@ -76,8 +76,8 @@
 
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/profile_image"
-                    android:layout_width="5dp"
-                    android:layout_height="5dp" />
+                    android:layout_width="@dimen/nav_header_vertical_spacing"
+                    android:layout_height="@dimen/nav_header_vertical_spacing" />
             </LinearLayout>
 
             <RelativeLayout

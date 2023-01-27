@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.pralhad.dailyexpneses.general;
+package com.example.pralhad.dailyexpneses.toggle_view;
 
 import android.animation.ValueAnimator;
 import android.content.Context;
@@ -30,7 +30,6 @@ import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
 
 import com.example.pralhad.dailyexpneses.R;
-import com.example.pralhad.dailyexpneses.model_class.ToggleableView;
 
 /**
  * <p>
@@ -296,7 +295,7 @@ public class LabeledSwitch extends ToggleableView {
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         int desiredWidth = getResources().getDimensionPixelSize(R.dimen.labeled_default_width);
-        int desiredHeight = getResources().getDimensionPixelSize(R.dimen.labeled_default_height);
+        int desiredHeight = getResources().getDimensionPixelSize(R.dimen.labeled_switch_height);
 
         int widthMode = View.MeasureSpec.getMode(widthMeasureSpec);
         int widthSize = View.MeasureSpec.getSize(widthMeasureSpec);

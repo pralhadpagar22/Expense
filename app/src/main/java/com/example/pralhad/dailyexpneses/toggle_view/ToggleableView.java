@@ -14,14 +14,12 @@
  * limitations under the License.
  */
 
-package com.example.pralhad.dailyexpneses.model_class;
+package com.example.pralhad.dailyexpneses.toggle_view;
 
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewDebug;
-
-import com.example.pralhad.dailyexpneses.Interface_class.OnToggledListener;
 
 
 /**

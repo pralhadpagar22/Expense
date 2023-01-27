@@ -2,14 +2,24 @@ package com.example.pralhad.dailyexpneses.model_class;
 
 import java.sql.Timestamp;
 
-public class Transaction {
+public class
+Transaction {
+    public static final byte FILTER_BY_ALL = 1;
+    public static final byte FILTER_BY_INCOME = 2;
+    public static final byte FILTER_BY_GIVE = 3;
+    public static final byte FILTER_BY_GIVE_ON_RETURN_POL = 4;
+    public static final byte FILTER_BY_PAID = 5;
+    public static final byte TR_TYPE_CREDITED = 0;
+    public static final byte TR_TYPE_DEBITED = 1;
+    public static final byte TR_TYPE_INCOME = 1;
+    public static final byte TR_TYPE_GIVE = 1;
 
     private int trId;
     private int trType;
-    private String trPerson;
-    private java.sql.Timestamp trDate;
-    private java.sql.Timestamp trDueDate;
     private int trAmount;
+    private java.sql.Timestamp trDate;
+
+    private byte isActive;
 
     public int getTrId() {
         return trId;
@@ -25,14 +35,6 @@ public class Transaction {
 
     public void setTrType(int trType) {
         this.trType = trType;
-    }
-
-    public String getTrPerson() {
-        return trPerson;
-    }
-
-    public void setTrPerson(String trPerson) {
-        this.trPerson = trPerson;
     }
 
     public Timestamp getTrDate() {
@@ -51,11 +53,11 @@ public class Transaction {
         this.trAmount = trAmount;
     }
 
-    public Timestamp getTrDueDate() {
-        return trDueDate;
+    public byte getIsActive() {
+        return isActive;
     }
 
-    public void setTrDueDate(Timestamp trDueDate) {
-        this.trDueDate = trDueDate;
+    public void setIsActive(byte isActive) {
+        this.isActive = isActive;
     }
 }

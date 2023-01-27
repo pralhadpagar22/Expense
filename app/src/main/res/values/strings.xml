@@ -6,7 +6,6 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">सेटिंग्ज</string>
-    <string name="action_add">जोडा</string>
 
     <!--Text User registration and flat_icon_login-->
     <string name="text_accounts">सर्व खाते</string>
@@ -14,40 +13,75 @@
     <string name="hint_last_name">आडनाव</string>
     <string name="hint_contact">संपर्क</string>
     <string name="hint_password">पासवर्ड</string>
+    <string name="hint_country_code">+1</string>
+    <string name="hint_msg_search">शोध</string>
     <string name="text_login">लॉगइन</string>
     <string name="text_register">नोंदणी करा</string>
     <string name="hint_confirm_password">पासवर्ड पुष्टी करा</string>
     <string name="text_not_member">खाते नाही? तयार करा.</string>
+    <string name="text_male">पुरुष</string>
+    <string name="text_female">स्त्री</string>
+    <string name="text_email">ई-मेल</string>
+    <string name="text_birth_date">जन्म तारीख</string>
+    <string name="text_verify_number">आपल्या फोन नंबर ची पडताळनी करा.</string>
+    <string name="text_verify_number_instruction">Expenses Pro तुम्हाला एसएमएस पाठवेल (वाहक शुल्क लागू शकेल). तुमचा फोन नंबर पडताळनी करण्यासाठी आपला देश कोड आणि फोन नंबर प्रविष्ट करा.</string>
+
+    <!--month array list-->
+    <string name="text_Jan">जानेवारी</string>
+    <string name="text_Feb">फेब्रुवारी</string>
+    <string name="text_Mar">मार्च</string>
+    <string name="text_Apr">एप्रिल</string>
+    <string name="text_May">मे</string>
+    <string name="text_Jun">जून</string>
+    <string name="text_July">जुलै</string>
+    <string name="text_Aug">ऑगस्ट</string>
+    <string name="text_Sep">सप्टेंबर</string>
+    <string name="text_Oct">ऑक्टोबर</string>
+    <string name="text_Nov">नोव्हेंबर</string>
+    <string name="text_Dec">डिसेंबर</string>
 
     <!--Transaction In or Out dialog-->
-    <string name="text_transaction_in_or_out">पैसे घेणे किंवा देणे असल्यास / कमाई</string>
+    <string name="text_transaction_in_or_out">पैसे द्यायचे असल्यास / कमाई</string>
     <string name="text_transaction_in">घेणे</string>
-    <string name="text_transaction_out">देणे</string>
-    <string name="text_available_balance">शिल्लक पैसे  -></string>
-    <string name="text_money_take_give_person">पैसे घेणारा किंवा देणारा व्यक्ती / कंपनी नाव</string>
-    <string name="text_how_many_amount">किती रक्कम</string>
+    <string name="text_transaction_out">द्यायचे</string>
+    <string name="text_available_balance_with_arrow">शिल्लक पैसे  -></string>
+    <string name="text_available_balance">शिल्लक पैसे</string>
+    <string name="text_today_expenses">आजचा खर्च</string>
+    <string name="text_money_give_person_name">पैसे ज्या व्यक्तीस द्याचे त्या व्यक्तीचे नाव</string>
+    <string name="text_income_type">कमाई प्रकार</string>
+    <string name="text_how_many_amount">रक्कम</string>
     <string name="text_on_return_policy">परत घेण्याच्या मुदतीवर.</string>
     <string name="text_due_date">पैसे घेण्याची तारीक सेट करा.</string>
     <string name="text_yes">हो</string>
     <string name="text_no">नाही</string>
+    <string name="text_ok">ठीक आहे</string>
 
-    <!--Account Fragment-->
+    <!--Sort filter-->
+    <string name="text_filter_show_all">सर्व दर्शवा</string>
+    <string name="text_filter_give_money">दिलेले पैसे</string>
+    <string name="text_filter_take_money">पैसे परत घ्याण्याच्या मुदतीवर असलेले</string>
+    <string name="text_filter_on_transactions">फिल्टर करा व्यावहारानुसार</string>
+
+
+    <!--Tab Fragment-->
     <string name="text_tr_type_given">दिले</string>
     <string name="text_tr_type_income">कमाई</string>
     <string name="text_tr_type_given_due">बाकी</string>
     <string name="text_tr_type_paid">जमा</string>
     <string name="text_tr_due_date">पैसे घेण्याची अंतिम तारीख:</string>
     <string name="text_tr_amount_type">₹</string>
+    <string name="text_msg_nothing_to_display">प्रदर्शित करण्यासाठी काहीही नाही.</string>
 
     <!--Error massage-->
     <string name="error_message_first_name">नाव प्रविष्ट करा.</string>
     <string name="error_message_last_name">आडनाव प्रविष्ट करा.</string>
-    <string name="error_message_contact">संपर्क मर्यादा दहा प्रविष्ट करा.</string>
+    <string name="error_message_contact">वैध क्रमांक प्रविष्ट करा.</string>
     <string name="error_message_password">पासवर्ड प्रविष्ट करा.</string>
     <string name="error_message_confirm_password">पासवर्ड पुष्टी चुकीची आहे.</string>
     <string name="error_contact_exists">संपर्क आधीच जतन केला आहे.</string>
     <string name="error_password_match">पासवर्ड जुळत नाही.</string>
     <string name="error_valid_email_password">चुकीचा संपर्क किंवा संकेतशब्द.</string>
+    <string name="error_valid_date">तारीक प्रविष्ट करा.</string>
 
     <!--Simple massage-->
     <string name="alert_message">अलर्ट</string>
@@ -56,9 +90,11 @@
     <string name="msg_registration_success">नोंदणी यशस्वी झाली आहे.</string>
     <string name="msg_valid_not_sufficient_amount">शिल्लक पैसे देण्या साठी पुरेसे नाही.</string>
     <string name="msg_valid_due_date">मुदतीची तारीख योग्य टाखा.</string>
+    <string name="msg_valid_due_date_is_empty">कृपया तारीख निश्चित करा.</string>
     <string name="msg_valid_edit_remaining_bal">शिल्लक राक्कम - जुनी राक्कम = उत्तर \n उत्तर + नविन राक्कम = येनार उत्तर वजा नको.</string>
     <string name="msg_valid_restrict_amount_delete">रक्कम वापरल्या गेली आहे. हटऊ शकत नाही.</string>
-
+    <string name="msg_delete_entry">आपणास खात्री आहे की आपण ही एंट्री हटवू इच्छिता</string>
+    <string name="msg_6_digit_code">आम्ही आपल्याला 6-अंकी कोड पाठविला आहे.</string>
 
 
     <!--DashBoard Text-->
@@ -66,13 +102,19 @@
     <string name="title_expenses">खर्च</string>
     <string name="title_account">खाते</string>
     <string name="title_profile">प्रोफाइल</string>
+    <string name="title_remains">शिल्लक</string>
 
     <!--Common Button, TextView Text-->
-    <string name="save_btn">जतन करा</string>
-    <string name="cancel_btn">रद्द करा</string>
-    <string name="delete_btn">हटवा</string>
-    <string name="edit_btn">संपादित करा</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="btn_save">जतन करा</string>
+    <string name="btn_apply">लागू करा</string>
+    <string name="btn_cancel">रद्द करा</string>
+    <string name="btn_delete">हटवा</string>
+    <string name="btn_edit">संपादित करा</string>
+    <string name="btn_add">जोडा</string>
+    <string name="btn_from">पासून</string>
+    <string name="btn_to">पर्यत</string>
+    <string name="btn_next">पुढे</string>
+    <string name="btn_continue">सुरू ठेवा</string>
+    <string name="btn_add_new_information">नवीन माहिती जोडा</string>
+    <string name="btn_resend">पुन्हा पाठवा</string>
 </resources>

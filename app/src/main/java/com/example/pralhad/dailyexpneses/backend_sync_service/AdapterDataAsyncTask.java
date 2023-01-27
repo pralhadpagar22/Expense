@@ -1,4 +1,4 @@
-package com.example.pralhad.dailyexpneses.data_source;
+package com.example.pralhad.dailyexpneses.backend_sync_service;
 
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -7,22 +7,26 @@ import android.os.AsyncTask;
 import com.example.pralhad.dailyexpneses.Interface_class.Interface;
 import com.example.pralhad.dailyexpneses.R;
 import com.example.pralhad.dailyexpneses.activity.MainActivity;
+import com.example.pralhad.dailyexpneses.data_source.TransactionsDataSource;
+import com.example.pralhad.dailyexpneses.fragment.Tab;
 
 import java.util.List;
 
-public class AsyncTaskDataExpTran extends AsyncTask<Object, Integer, List> {
+public class AdapterDataAsyncTask extends AsyncTask<Object, Integer, List> {
 
-    private byte TAG_DASHBOARD = 1;
-    private byte TAG_TRANSACTION = 2;
-    private byte TAG_EXPENSES = 3;
+    public static byte DATA_TYPE_DASHBOARD = 1;
+    public static byte DATA_TYPE_EXPENSES = 2;
+    public static byte DATA_TYPE_TRANSACTION = 3;
+    public static byte DATA_TYPE_PROFILE = 4;
+
     private byte type = 0;
-    public Interface anInterface;
+    public Interface.listData listData;
     private Context context;
     public static ProgressDialog progressDialog;
 
-    public AsyncTaskDataExpTran (byte type, Context context, Interface anInterface) {
+    public AdapterDataAsyncTask(byte type, Context context, Tab anInterface) {
         this.type = type;
-        this.anInterface = anInterface;
+        this.listData = anInterface;
         progressDialog = new ProgressDialog(context);
         progressDialog.setMessage(context.getResources().getString(R.string.msg_loading_dialog));
         this.context = context;
@@ -31,14 +35,13 @@ public class AsyncTaskDataExpTran extends AsyncTask<Object, Integer, List> {
     @Override
     protected List doInBackground(Object... objects) {
         List list = null;
-        if (type == TAG_TRANSACTION) {
+        if (type == DATA_TYPE_DASHBOARD) {
 
-        } else if (type == TAG_EXPENSES) {
+        } else if (type == DATA_TYPE_EXPENSES) {
+
+        } else if (type == DATA_TYPE_TRANSACTION) {
             TransactionsDataSource transactionsDataSource = new TransactionsDataSource(MainActivity.dataSource);
             list = transactionsDataSource.getAllTransaction();
-
-        } else if (type == TAG_DASHBOARD) {
-
         }
         return list;
     }
@@ -52,7 +55,7 @@ public class AsyncTaskDataExpTran extends AsyncTask<Object, Integer, List> {
     @Override
     protected void onPostExecute(List list) {
         super.onPostExecute(list);
-        anInterface.showListData(list);
+        listData.showListData(list);
 
         if (progressDialog.isShowing()) {
             progressDialog.dismiss();

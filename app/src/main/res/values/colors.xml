@@ -1,19 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--app theme level color -->
     <color name="colorPrimary">#369DA4</color>
     <color name="colorPrimaryDark">#369DA4</color>
     <color name="colorAccent">#369DA4</color>
+
+    <!--app component color-->
     <color name="colorText">#369DA4</color>
     <color name="colorTextHint">#002426</color>
     <color name="roundShepColor">#071712</color>
     <color name="navigationMenuTextColor">#FFBBFBFF</color>
 
     <!-- transaction type text color -->
-    <color name="color_due_text">#F21D19</color>
-    <color name="color_income_text">#4EC215</color> <!--Ghetle, income-->
-    <color name="color_outgoing_text">#03BEEB</color> <!--Dile-->
+    <color name="color_due">#F21D19</color>
+    <color name="color_income">#4EC215</color> <!--Ghetle, income-->
+    <color name="color_outgoing">#03BEEB</color> <!--Dile-->
+    <color name="color_paid">#4000FF</color> <!--Dile-->
+    <color name="color_expenses">#952929</color> <!--color expenses-->
 
     <!--Alert Color-->
     <color name="color_alert">#d96a64</color>
     <color name="color_yellow">#FFFF00</color>
+    <color name="color_white">#FFFFff</color>
 </resources>

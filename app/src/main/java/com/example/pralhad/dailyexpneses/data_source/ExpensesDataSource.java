@@ -6,9 +6,8 @@ import android.database.DatabaseUtils;
 import android.util.Log;
 
 import com.example.pralhad.dailyexpneses.activity.MainActivity;
-import com.example.pralhad.dailyexpneses.project_db.UserExpenseDB;
-
-import java.util.Map;
+import com.example.pralhad.dailyexpneses.model_class.Expense;
+import com.example.pralhad.dailyexpneses.project_db.DBExpenses;
 
 public class ExpensesDataSource {
     private MainDataSource dataSource;
@@ -17,10 +16,10 @@ public class ExpensesDataSource {
         this.dataSource = dataSource;
     }
 
-    public boolean expensesEntry(Map<String, String> expensesData) {
+    public boolean expensesEntry(Expense expense) {
         ContentValues values = new ContentValues();
-        setExpensesValue(values, expensesData);
-        long expId = dataSource.insert(UserExpenseDB.EXPENSES_TABLE, null, values);
+        setExpensesValue(values, expense);
+        long expId = dataSource.insert(DBExpenses.TBL_EXPENSES, null, values);
         if (expId > 0)
             return true;
         else return false;
@@ -28,18 +27,18 @@ public class ExpensesDataSource {
 
     }
 
-    private void setExpensesValue(ContentValues values, Map<String, String> expensesData) {
-        values.put(UserExpenseDB.EX_DATE, expensesData.get("exDate"));
-        values.put(UserExpenseDB.EX_PARTICULAR, expensesData.get("exParticular"));
-        values.put(UserExpenseDB.EX_AMOUNT, expensesData.get("exAmount"));
-        values.put(UserExpenseDB.EX_BALANCE, expensesData.get("exBalance"));
-        values.put(UserExpenseDB.EX_BILL, expensesData.get("exBill"));
-        values.put(UserExpenseDB.USER_ID, String.valueOf(MainActivity.dataSource.sPref.getUserId()));
-        values.put(UserExpenseDB.IS_ACTIVE, 0);
+    private void setExpensesValue(ContentValues values, Expense expensesData) {
+        values.put(DBExpenses.EX_DATE, expensesData.getExDate().toString());
+        //values.put(DBExpenses.EX_PARTICULAR, expensesData.getExParticular());
+        values.put(DBExpenses.EX_AMOUNT, expensesData.getExAmount());
+       // values.put(DBExpenses.EX_BALANCE, expensesData.getExBalance());
+        //values.put(DBExpenses.EX_BILL, expensesData.getExBill());
+        values.put(DBExpenses.USER_ID, String.valueOf(MainActivity.dataSource.sPref.getUserId()));
+        values.put(DBExpenses.IS_ACTIVE, expensesData.getIsActive());
     }
 
     public void showData() {
-        Cursor cursor = dataSource.rawQuery("select * from " + UserExpenseDB.EXPENSES_TABLE, null);
+        Cursor cursor = dataSource.rawQuery("select * from " + DBExpenses.TBL_EXPENSES, null);
         Log.i("***result", DatabaseUtils.dumpCursorToString(cursor));
     }
 

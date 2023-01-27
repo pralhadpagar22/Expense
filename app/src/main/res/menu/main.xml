@@ -1,29 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:tools="http://schemas.android.com/tools"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
     <item
+        android:id="@+id/action_search"
+        android:icon="@drawable/baseline_search_white"
         android:visible="false"
+        app:actionViewClass="androidx.appcompat.widget.SearchView"
+        app:showAsAction="always|collapseActionView" />
+    <item
         android:id="@+id/action_settings"
-        android:orderInCategory="100"
         android:icon="@drawable/outline_settings_white"
+        android:orderInCategory="100"
         android:title="@string/action_settings"
+        android:visible="false"
         app:showAsAction="always"
         tools:ignore="AppCompatResource" />
     <item
-        android:visible="false"
         android:id="@+id/action_add"
-        android:orderInCategory="100"
         android:icon="@drawable/outline_add_circle_white"
-        android:title="@string/action_add"
+        android:orderInCategory="100"
+        android:title="@string/btn_add"
+        android:visible="false"
         app:showAsAction="always"
         tools:ignore="AppCompatResource" />
     <item
-        android:visible="false"
         android:id="@+id/action_sort"
-        android:orderInCategory="100"
         android:icon="@drawable/baseline_filter_list_white"
-        android:title="@string/action_add"
+        android:orderInCategory="100"
+        android:title="@string/btn_add"
+        android:visible="false"
         app:showAsAction="always"
         tools:ignore="AppCompatResource" />
 </menu>

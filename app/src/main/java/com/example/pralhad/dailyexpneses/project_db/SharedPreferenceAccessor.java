@@ -3,7 +3,6 @@ package com.example.pralhad.dailyexpneses.project_db;
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.widget.ScrollView;
 
 public class SharedPreferenceAccessor {
 
@@ -11,6 +10,7 @@ public class SharedPreferenceAccessor {
     private String USER_PASSWORD = "user_password";
     private String USER_ID = "user_id";
     private String USER_NAME = "user_name";
+    private String USER_EMAIL = "user_email";
     private String REMAINING_AMOUNT = "remaining_amount";
 
     private Context context;
@@ -50,6 +50,16 @@ public class SharedPreferenceAccessor {
     public String getUserPassword() {
         return sharedPref.getString(USER_PASSWORD, null);
     }
+
+    public String getUserEmail() {
+        return sharedPref.getString(USER_EMAIL, null);
+    }
+
+    public void setUserEmail(String userEmail) {
+        editor.putString(USER_EMAIL, userEmail);
+        editor.commit();
+    }
+
 
     public void setRemainingAmount(int remainingAmount) {
         editor.putInt(REMAINING_AMOUNT, remainingAmount);

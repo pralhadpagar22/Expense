@@ -2,30 +2,30 @@ package com.example.pralhad.dailyexpneses.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
-//import android.support.design.widget.TextInputEditText;
-//import android.support.design.widget.TextInputLayout;
-//import android.support.v4.app.FragmentManager;
-//import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
-
-import com.example.pralhad.dailyexpneses.R;
-import com.example.pralhad.dailyexpneses.data_source.UsersDataSource;
-import com.example.pralhad.dailyexpneses.general.Constant;
-import com.example.pralhad.dailyexpneses.general.SharedVariable;
-import com.example.pralhad.dailyexpneses.general.Validation;
-import com.example.pralhad.dailyexpneses.fragment.SimpleDialog;
-import com.google.android.material.textfield.TextInputEditText;
-import com.google.android.material.textfield.TextInputLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 
+import com.example.pralhad.dailyexpneses.R;
+import com.example.pralhad.dailyexpneses.data_source.UsersDataSource;
+import com.example.pralhad.dailyexpneses.fragment.SimpleAlertDialog;
+import com.example.pralhad.dailyexpneses.general.Constants;
+import com.example.pralhad.dailyexpneses.model_class.User;
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
+
+//import android.support.design.widget.TextInputEditText;
+//import android.support.design.widget.TextInputLayout;
+//import android.support.v4.app.FragmentManager;
+//import android.support.v7.app.AppCompatActivity;
+
 public class UserSignUp extends AppCompatActivity implements View.OnClickListener {
 
     private TextInputEditText userContact, userPassword; //userContact,
-    private TextInputLayout inputContact, inputPassword;
-    private String usrContact, usrPassword, userName;
+    public TextInputLayout inputContact, inputPassword;
+    private static User user = null;
 
 
     @Override
@@ -49,32 +49,16 @@ public class UserSignUp extends AppCompatActivity implements View.OnClickListene
         loginBtn.setOnClickListener(this);
 
         if (getIntent().getExtras() != null) {
-            userContact.setText(getIntent().getStringExtra("usrContact"));
-            userPassword.setText(getIntent().getStringExtra("usrPassword"));
-            userName = getIntent().getStringExtra("userName");
-        }
+            user = (User)getIntent().getSerializableExtra("user");
+            userContact.setText(user.getUserContact());
+            userPassword.setText(user.getUserPassword());
+            //userName = user.getUserName();
+        } else user = new User();
     }
 
-    public boolean checkValidation() {
-        usrContact = userContact.getText() + "";
-        usrPassword = userPassword.getText() + "";
-
-        if (Validation.contactValidation(usrContact)) {
-            inputContact.setErrorEnabled(false);
-        } else {
-            inputContact.setError(getResources().getString(R.string.error_message_contact));
-            SharedVariable.hideKeyboardFrom(userContact, this);
-            return false;
-        }
-
-        if (Validation.passwordValidation(usrPassword)) {
-            inputPassword.setErrorEnabled(false);
-        } else {
-            inputPassword.setError(getResources().getString(R.string.error_message_password));
-            SharedVariable.hideKeyboardFrom(userContact, this);
-            return false;
-        }
-        return true;
+    public void setData() {
+        user.setUserContact(userContact.getText() != null ? userContact.getText().toString() : "");
+        user.setUserPassword(userPassword.getText() != null ? userPassword.getText().toString() : "");
     }
 
     @Override
@@ -88,12 +72,14 @@ public class UserSignUp extends AppCompatActivity implements View.OnClickListene
         switch (view.getId()) {
             case R.id.user_register_btn:
                 startActivity(new Intent(UserSignUp.this, UserRegistration.class));
-
+                finish();
                 break;
             case R.id.login_btn:
-                if (checkValidation()) {
-                    if (new UsersDataSource(MainActivity.dataSource).userAuthentication(usrContact, usrPassword)) {
-                        setPrefix();
+                setData();
+                if (user.validate(null, this)) {
+                    UsersDataSource usersDataSource = new UsersDataSource(MainActivity.dataSource);
+                    if (usersDataSource.userAuthentication(user) != null) {
+                        MainActivity.dataSource.setApplicationData(user);
                         lunchActivity();
                     } else
                         showAlertDialog();
@@ -102,24 +88,15 @@ public class UserSignUp extends AppCompatActivity implements View.OnClickListene
         }
     }
 
-    private void setPrefix() {
-        MainActivity.dataSource.sPref.setUserContact(usrContact);
-        MainActivity.dataSource.sPref.setUserPassword(usrPassword);
-        MainActivity.dataSource.sPref.setUserName(userName);
-    }
-
     private void lunchActivity() {
         startActivity(new Intent(UserSignUp.this, MainActivity.class));
         finish();
     }
 
     private void showAlertDialog() {
-        String title, message;
-        title = getResources().getString(R.string.alert_message);
-        message = getResources().getString(R.string.error_valid_email_password);
         FragmentManager fm = getSupportFragmentManager();
-        SimpleDialog alertDialog = SimpleDialog.newInstance(title, message, true);
-        alertDialog.show(fm, Constant.SIMPLE_DIALOG);
+        SimpleAlertDialog alertDialog = SimpleAlertDialog.newInstance(R.string.alert_message, getResources().getString(R.string.error_valid_email_password));
+        alertDialog.show(fm, Constants.SIMPLE_DIALOG);
     }
 }
 
